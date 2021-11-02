@@ -10,7 +10,11 @@ class UsersController < ApplicationController
 
   def show
     current_user = User.find(session[:user_id])
-    render json: current_user, status: :ok
+    if current_user
+      render json: current_user, status: :ok
+    else
+      render json: { error: "Not authorized" }, status: :unauthorized
+    end
   end
 
   def favorites
@@ -21,11 +25,11 @@ class UsersController < ApplicationController
   private
   
   def user_params
-    params.permit(:username, :password_digest)
+    params.permit(:name, :username, :password)
   end
 
   def render_unprocessable_response(invalid)
-    render json: {error: invalid.record.errors}, status: :unprocessable_entity
+    render json: { errors: current_user.errors.full_messages }, status: :unprocessable_entity
   end
 
   def user_not_found_response

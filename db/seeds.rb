@@ -1,5 +1,5 @@
-user1 = User.create(name: "Restaurant Dogs", username: "hotdogs", password_digest: "hotdogger")
-melissa = User.create(name: "Melissa", username: "melissafunk", password_digest: "hello")
+user1 = User.create(name: "Restaurant Dogs", username: "hotdogs", password: "hotdogger")
+melissa = User.create(name: "Melissa", username: "melissafunk", password: "hello")
 
 stix = Restaurant.create(name: "STIX", address: "1353 Taraval St., San Francisco, CA 94116", image: "https://scontent-sjc3-1.xx.fbcdn.net/v/t1.6435-9/78678449_563411407811269_229291308747849728_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=973b4a&_nc_ohc=O2_9Bj4PC-cAX8xuC2z&_nc_ht=scontent-sjc3-1.xx&oh=6f64f386251e694949b6a434fcb81d5f&oe=61A716B4", url: "https://stixsf.square.site/", description: "Insta-Worthy Korean Style Corndogs")
 rosamunde = Restaurant.create(name: "Rosamunde Sausage Grill", address: "2832 Mission St., San Francisco, CA 94110", image: "https://www.facebook.com/RosamundeSausageGrillMission/photos/pb.121615984518244.-2207520000../4881205468559248/?type=3&theater", url: "https://direct.chownow.com/order/21598/locations/31314", description: "Housemade Grilled Sausages Including Their Infamous Boar Sausage")
