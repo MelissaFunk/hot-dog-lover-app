@@ -18,10 +18,10 @@ function Home({ currentUser, setCurrentUser }) {
         <NavBar />
         <Switch>
           <Route exact path="/find"><Find /></Route>
-          <Route exact path="/restaurant/:id"><RestaurantDetails /></Route>
+          <Route exact path="/restaurant/:id"><RestaurantDetails currentUser={currentUser}/></Route>
           <Route exact path="/create"><Create /></Route>
-          <Route exact path="/favorites/:id"><Favorites currentUser={currentUser}/></Route>
-          <Route exact path="/profile"><Profile /></Route>
+          <Route exact path="/favorites"><Favorites currentUser={currentUser}/></Route>
+          <Route exact path="/profile"><Profile currentUser={currentUser} setCurrentUser={setCurrentUser}/></Route>
           <Route exact path="/logout"><Logout setCurrentUser={setCurrentUser}/></Route>
         </Switch>
       </Router>

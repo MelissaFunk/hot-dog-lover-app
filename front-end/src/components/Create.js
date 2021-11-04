@@ -1,7 +1,7 @@
 function Create() {
 
   return(
-    <h1>Create</h1>
+    <h1>Create Your Own Hot Dog!</h1>
   )
 }
 

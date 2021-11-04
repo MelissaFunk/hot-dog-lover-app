@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_response
   rescue_from ActiveRecord::RecordNotFound, with: :user_not_found_response
-  skip_before_action :authorized, only: [:create, :favorites]
+  skip_before_action :authorized
+
+  def index
+    render json: User.all, status: :ok
+  end
 
   def create
     user = User.create!(user_params)
@@ -16,9 +20,15 @@ class UsersController < ApplicationController
       render json: { error: "Not authorized" }, status: :unauthorized
     end
   end
+  
+  def update
+    user = User.find(params[:id])
+    user.update(params.require(:user).permit(:id, :name))
+    render json: user, status: :accepted
+  end
 
   def favorites
-    favorite = Review.where(["user_id = ? and favorite =?", params[:id], true])
+    favorite = Review.where(["user_id = ? and favorite = ?", params[:id], true])
     render json: favorite, status: :ok
   end
 
