@@ -5,8 +5,7 @@ function Create({ currentUser }) {
   const [dogStyle, setDogStyle] = useState(null)
 
   const handleDogStyleClick = (e) => {
-    e.preventDefault()
-    setDogStyle(e.target.value)
+    setDogStyle(e.target.name.value)
     console.log(dogStyle)
   }
 
@@ -32,13 +31,12 @@ function Create({ currentUser }) {
   return(
     <div>
       <h1>Create Your Own Hot Dog!</h1>
+      <img src="https://cdn4.iconfinder.com/data/icons/food-9/512/food-19-512.png" alt="hotdog-icon" name="All Beef" onClick={handleDogStyleClick}/>
       <form onSubmit={handleHotDogSubmit}>
         <label>Name: </label>
         <input type="text" name="name" />
         <label> Image: </label>
         <input type="img" name="image" />
-        <label> Dog Style: </label>
-        <img src="https://cdn4.iconfinder.com/data/icons/food-9/512/food-19-512.png" alt="hotdog-icon" value="All Beef" onClick={handleDogStyleClick}/>
         <label> Toppings: </label>
         <input type="text" name="toppings" />
         <label> Condiments: </label>
