@@ -11,8 +11,10 @@ function Profile({ currentUser, setCurrentUser }) {
       body: JSON.stringify({ name: e.target.name.value })
     })
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then(setCurrentUser)
   }
+
+  console.log(currentUser)
 
   return(
     <div>

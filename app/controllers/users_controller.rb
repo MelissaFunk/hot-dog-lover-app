@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_response
   rescue_from ActiveRecord::RecordNotFound, with: :user_not_found_response
-  skip_before_action :authorized
+  skip_before_action :authorized, only: [:index, :create, :favorites]
 
   def index
     render json: User.all, status: :ok

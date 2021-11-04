@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
 import RestaurantCard from './RestaurantCard'
+import { useEffect, useState } from 'react'
 
 function Find() {
   const [restaurants, setRestaurants] = useState([])
@@ -20,7 +20,7 @@ function Find() {
       if (filterBy === "") {
         return true
       } else {
-        return rest.name === filterBy
+        return rest.name.toLowerCase().includes(filterBy.toLowerCase())
       }
     })
   }

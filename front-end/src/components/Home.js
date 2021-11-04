@@ -19,7 +19,7 @@ function Home({ currentUser, setCurrentUser }) {
         <Switch>
           <Route exact path="/find"><Find /></Route>
           <Route exact path="/restaurant/:id"><RestaurantDetails currentUser={currentUser}/></Route>
-          <Route exact path="/create"><Create /></Route>
+          <Route exact path="/create"><Create currentUser={currentUser}/></Route>
           <Route exact path="/favorites"><Favorites currentUser={currentUser}/></Route>
           <Route exact path="/profile"><Profile currentUser={currentUser} setCurrentUser={setCurrentUser}/></Route>
           <Route exact path="/logout"><Logout setCurrentUser={setCurrentUser}/></Route>

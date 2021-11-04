@@ -1,5 +1,6 @@
 class RestaurantSerializer < ActiveModel::Serializer
   attributes :id, :name, :image, :description, :avg_rating
+  has_many :hot_dogs
 
   def avg_rating
     reviews = self.object.reviews.select do |rev|
