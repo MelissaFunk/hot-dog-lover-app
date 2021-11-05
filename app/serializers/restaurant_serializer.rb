@@ -7,11 +7,11 @@ class RestaurantSerializer < ActiveModel::Serializer
       rev.rating
     end
     ratings = reviews.map(&:rating)
-    ratings.then{ |r| r.sum.to_f / r.size }
+    ratings.then{ |r| r.sum.to_f / r.size }.to_s
   end
 
   def all_condiments_toppings
-    (all_condiments + all_toppings)
+    all_condiments + all_toppings
   end
 
   private
