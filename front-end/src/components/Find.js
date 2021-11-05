@@ -11,22 +11,22 @@ function Find() {
       .then(setRestaurants)  
   }, [])
 
-  function handleFilterChange(e) {
+  function handleCondTopFilterChange(e) {
     setFilterBy(e.target.value)
   }
 
-  function restaurantsToDisplay() {
+  function restaurantsToDisplayByCondTop() {
     return restaurants.slice(0, -1).filter(rest => {
       if (filterBy === "") {
         return true
       } else {
-        return rest.name.toLowerCase().includes(filterBy.toLowerCase())
+        return rest.all_condiments_toppings.toLowerCase().includes(filterBy.toLowerCase())
       }
     })
   }
 
-  function eachRestaurant() {
-    return restaurantsToDisplay().map(restaurant =>
+  function eachRestaurantByCondTop() {
+    return restaurantsToDisplayByCondTop().map(restaurant =>
       <RestaurantCard 
         restaurant={restaurant}
         key={restaurant.id}
@@ -34,13 +34,38 @@ function Find() {
       )
   }
 
+  // function handleRatingFilterChange(e) {
+  //   setFilterBy(e.target.value)
+  // }
+
+  // function restaurantsToDisplayRating() {
+  //   return restaurants.slice(0, -1).filter(rest => {
+  //     if (filterBy === "") {
+  //       return true
+  //     } else {
+  //       return rest.rating.includes(filterBy)
+  //     }
+  //   })
+  // }
+
+  // function eachRestaurantByRating() {
+  //   return restaurantsToDisplayByRating().map(restaurant =>
+  //     <RestaurantCard 
+  //       restaurant={restaurant}
+  //       key={restaurant.id}
+  //     />
+  //     )
+  // }
+
+
   return(
     <div>
       <h1>Find</h1>
       <p>Use the search bar below to filter through hot dog restaurants</p>
-      <label>Search by Name: </label>
-      <input type="text" onChange={handleFilterChange} />
-      {eachRestaurant()}
+      <label>Search by Condiments or Toppings: </label>
+      <input type="text" onChange={handleCondTopFilterChange} />
+      {eachRestaurantByCondTop()}
+      
     </div>
   )
 }

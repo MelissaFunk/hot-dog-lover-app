@@ -1,7 +1,4 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :name, :username, :password, :created_hot_dogs
+  attributes :id, :name, :username, :password
 
-  def created_hot_dogs
-    
-  end
 end
