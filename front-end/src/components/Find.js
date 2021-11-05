@@ -45,7 +45,7 @@ function Find() {
       if (filterByRating === "All") {
         return true
       } else {
-        return filterByRating == rest.avg_rating[0]
+        return filterByRating === rest.avg_rating[0]
       }
     })
   }

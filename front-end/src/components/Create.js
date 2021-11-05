@@ -2,11 +2,12 @@ import { useState } from "react"
 
 function Create({ currentUser }) {
   const [hotDog, setHotDog] = useState(null)
-  const [dogStyle, setDogStyle] = useState(null)
+  const [dogStyle, setDogStyle] = useState("")
+  const [hotDogImageUrl, setHotDogImageUrl] = useState("https://cdn4.iconfinder.com/data/icons/food-9/512/food-19-512.png")
 
   const handleDogStyleClick = (e) => {
-    setDogStyle(e.target.name.value)
-    console.log(dogStyle)
+    setDogStyle(e.target.name)
+    setHotDogImageUrl("https://www.klostermanbakery.com/uploads/images/products/3735_PRODUCT_6in_WGR_HD_Bun_900px_Rev.jpg")
   }
 
   const handleHotDogSubmit = (e) => {
@@ -16,7 +17,6 @@ function Create({ currentUser }) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         name: e.target.name.value,
-        image: e.target.image.value,
         dog_style: dogStyle,
         toppings: e.target.toppings.value,
         condiments: e.target.condiments.value,
@@ -26,17 +26,16 @@ function Create({ currentUser }) {
     })
     .then(res => res.json())
     .then(setHotDog)
+    e.target.reset()
   }
 
   return(
     <div>
       <h1>Create Your Own Hot Dog!</h1>
-      <img src="https://cdn4.iconfinder.com/data/icons/food-9/512/food-19-512.png" alt="hotdog-icon" name="All Beef" onClick={handleDogStyleClick}/>
-      <form onSubmit={handleHotDogSubmit}>
+      <img src={hotDogImageUrl} alt="hotdog-icon" name="All Beef" onClick={e => handleDogStyleClick(e)} />
+      <form onSubmit={e => handleHotDogSubmit(e)}>
         <label>Name: </label>
         <input type="text" name="name" />
-        <label> Image: </label>
-        <input type="img" name="image" />
         <label> Toppings: </label>
         <input type="text" name="toppings" />
         <label> Condiments: </label>
@@ -46,13 +45,13 @@ function Create({ currentUser }) {
 
       {hotDog ? 
       <div>
-        <h3>{hotDog.name}</h3> 
-        <img src={hotDog.image} alt="hotdog" />
+        <h3>Name: {hotDog.name}</h3> 
         <p>Dog Style: {hotDog.dog_style}</p>
         <p>Toppings: {hotDog.toppings}</p>
         <p>Condiments: {hotDog.condiments}</p>
       </div>
       : null}
+
     </div>
   )
 }
