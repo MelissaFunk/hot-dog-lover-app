@@ -75,7 +75,7 @@ function Find() {
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
-      {false ? eachRestaurantByCondTop() : eachRestaurantByRating()}
+      {filterByRating === "All" ? eachRestaurantByCondTop() : eachRestaurantByRating()}
     </div>
   )
 }
