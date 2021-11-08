@@ -2,8 +2,6 @@ function Profile({ currentUser, setCurrentUser }) {
 
   function handleEdit(e) {
     e.preventDefault()
-    console.log(e.target.name.value)
-    console.log(currentUser)
 
     fetch(`/users/${currentUser.id}`, {
       method: 'PATCH',
@@ -13,8 +11,6 @@ function Profile({ currentUser, setCurrentUser }) {
     .then(res => res.json())
     .then(setCurrentUser)
   }
-
-  console.log(currentUser)
 
   return(
     <div>

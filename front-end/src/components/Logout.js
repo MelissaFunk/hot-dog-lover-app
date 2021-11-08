@@ -9,7 +9,7 @@ function Logout({ setCurrentUser }) {
     })
     .then(resp => {
         if (resp.ok) {
-            setCurrentUser(null)
+            setCurrentUser({})
             history.push("/")
         }
     })

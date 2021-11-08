@@ -1,5 +1,4 @@
 class HotDogsController < ApplicationController
-  skip_before_action :authorized
 
   def create
     hot_dog = HotDog.create(hot_dog_params)

@@ -1,13 +1,17 @@
 import { useEffect, useState } from 'react'
 import RestaurantCard from './RestaurantCard'
 
-function Favorites({ currentUser }) {
+function Favorites({ currentUser}) {
   const [favorites, setFavorites] = useState([])
-  
+  console.log(`Before useEffect: ${currentUser.id}`)
+
   useEffect(() => {
     fetch(`/favorites/${currentUser.id}`)
       .then(res => res.json())
-      .then(setFavorites)  
+      .then(data => {
+        setFavorites(data)
+        console.log(`After useEffect: ${currentUser.id}`)
+      })  
   }, [currentUser.id])
   
   const eachRestaurant = favorites.map(restaurant =>

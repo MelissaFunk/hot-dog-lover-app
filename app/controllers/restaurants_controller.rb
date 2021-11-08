@@ -1,6 +1,5 @@
 class RestaurantsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :restaurant_not_found_response
-  skip_before_action :authorized
 
   def index
     render json: Restaurant.all, status: :ok

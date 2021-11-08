@@ -24,7 +24,7 @@ function Login({ currentUser, setCurrentUser }) {
       if(res.ok) {
         res.json().then(user => {
           setCurrentUser(user)
-          history.push('/home')
+          history.push('/find')
         })
       } else {
         res.json().then(errors => setErrors(errors))
@@ -46,7 +46,7 @@ function Login({ currentUser, setCurrentUser }) {
       if(res.ok) {
         res.json().then(user => {
           setCurrentUser(user)
-          history.push('/home')
+          history.push('/find')
         })
       } else {
         res.json().then(errors => setErrors(errors))

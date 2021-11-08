@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_response
   rescue_from ActiveRecord::RecordNotFound, with: :user_not_found_response
-  skip_before_action :authorized, only: [:index, :create, :favorites]
 
   def index
     render json: User.all, status: :ok
@@ -9,15 +8,15 @@ class UsersController < ApplicationController
 
   def create
     user = User.create!(user_params)
+    session[:user_id] = user.id
     render json: user, status: :created
   end
 
   def show
-    current_user = User.find(session[:user_id])
     if current_user
       render json: current_user, status: :ok
     else
-      render json: { error: "Not authorized" }, status: :unauthorized
+      render json: { error: 'No active session' }, status: :unauthorized
     end
   end
   

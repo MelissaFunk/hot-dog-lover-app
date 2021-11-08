@@ -1,12 +1,17 @@
 import './App.css'
 import { Route, Switch } from 'react-router-dom'
-import { BrowserRouter as Router } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import Login from './components/Login'
-import Home from './components/Home'
+import NavBar from './components/NavBar'
+import Find from './components/Find'
+import RestaurantDetails from './components/RestaurantDetails'
+import Create from './components/Create'
+import Favorites from './components/Favorites'
+import Profile from './components/Profile'
+import Logout from './components/Logout'
 
 function App() {
-  const [currentUser, setCurrentUser] = useState(null)
+  const [currentUser, setCurrentUser] = useState({})
 
   useEffect(() => {
     fetch('/me')
@@ -19,12 +24,16 @@ function App() {
 
   return (
     <div>
-      <Router>
+        {currentUser.name ? <NavBar /> : null}
         <Switch>
           <Route exact path="/"><Login currentUser={currentUser} setCurrentUser={setCurrentUser}/></Route>
-          <Route exact path="/home"><Home currentUser={currentUser} setCurrentUser={setCurrentUser}/></Route>
+          <Route exact path="/find"><Find /></Route>
+          <Route exact path="/restaurant/:id"><RestaurantDetails currentUser={currentUser}/></Route>
+          <Route exact path="/create"><Create currentUser={currentUser}/></Route>
+          <Route exact path="/favorites"><Favorites currentUser={currentUser} setCurrentUser={setCurrentUser}/></Route>
+          <Route exact path="/profile"><Profile currentUser={currentUser}/></Route>
+          <Route exact path="/logout"><Logout setCurrentUser={setCurrentUser}/></Route>
         </Switch>
-      </Router>
     </div>
   );
 }

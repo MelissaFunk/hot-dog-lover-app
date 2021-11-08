@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-  skip_before_action :authorized
   
   def create
     comment = Comment.create(comment_params)
