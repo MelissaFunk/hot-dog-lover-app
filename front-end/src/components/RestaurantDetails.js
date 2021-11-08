@@ -6,7 +6,6 @@ function RestaurantDetails({ currentUser }) {
   const [restaurant, setRestaurant] = useState([])
   const [commentsArr, setCommentsArr] = useState([])
   const [hotDogsArr, setHotDogsArr] = useState([])
-  const [comments, setComments] = useState([])
   const [favorites, setFavorites] = useState([])
   const [ratings, setRatings] = useState([])
   const [favClicked, setFavClicked] = useState(false)
@@ -24,7 +23,7 @@ function RestaurantDetails({ currentUser }) {
   }, [id])
 
   const handleAddComment = (newComment) => {
-    setComments([...comments, newComment])
+    setCommentsArr([...commentsArr, newComment])
   }
 
   const handleCommentSubmit = (e) => {

@@ -26,12 +26,12 @@ function App() {
     <div>
         {currentUser.name ? <NavBar /> : null}
         <Switch>
-          <Route exact path="/"><Login currentUser={currentUser} setCurrentUser={setCurrentUser}/></Route>
+          <Route exact path="/"><Login setCurrentUser={setCurrentUser}/></Route>
           <Route exact path="/find"><Find /></Route>
           <Route exact path="/restaurant/:id"><RestaurantDetails currentUser={currentUser}/></Route>
           <Route exact path="/create"><Create currentUser={currentUser}/></Route>
           <Route exact path="/favorites"><Favorites currentUser={currentUser} setCurrentUser={setCurrentUser}/></Route>
-          <Route exact path="/profile"><Profile currentUser={currentUser}/></Route>
+          <Route exact path="/profile"><Profile currentUser={currentUser} /></Route>
           <Route exact path="/logout"><Logout setCurrentUser={setCurrentUser}/></Route>
         </Switch>
     </div>

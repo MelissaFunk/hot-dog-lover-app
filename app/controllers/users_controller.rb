@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     session[:user_id] = user.id
     render json: user, status: :created
   end
-
+  
   def show
     if current_user
       render json: current_user, status: :ok
@@ -19,11 +19,10 @@ class UsersController < ApplicationController
       render json: { error: 'No active session' }, status: :unauthorized
     end
   end
-  
+    
   def update
-    user = User.find(params[:id])
-    user.update(params.require(:user).permit(:id, :name))
-    render json: user, status: :accepted
+    current_user.update(params.require(:user).permit(:name, :username, :password))
+    render json: current_user, status: :accepted
   end
 
   def favorites

@@ -1,7 +1,7 @@
 import { useState} from "react"
 import { useHistory } from "react-router-dom"
 
-function Login({ currentUser, setCurrentUser }) {
+function Login({ setCurrentUser }) {
   const [userLog, setUserLog] = useState('')
   const [passLog, setPassLog] = useState('')
   const [nameSign, setNameSign] = useState('')
