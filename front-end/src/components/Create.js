@@ -5,9 +5,11 @@ function Create({ currentUser }) {
   const [mustard, setMustard] = useState("")
   const [ketchup, setKetchup] = useState("")
   const [onion, setOnion] = useState("")
+  const [relish, setRelish] = useState("")
   const [ketchupImageUrl, setKetchupImageUrl] = useState("https://lh3.googleusercontent.com/56FFbgFRSz-fVtdQad5apiwDXc7hebh-vW9wYYI1yDlmDQk_q5OPZ28WZqriDaYoCy7W3k61wf7h-sVwIAFbSLh9por7_cV92-2TYdjHLqu6SjtNGaW8Y3wg7e71XEEy010wJRURAwH32qnrmFli3GoetT71Tw4h3p3jp98v6fGzCohSpjjwLWbEp68EwJQQJka-3-UKOmMNM3Yy8hKSQMKJoqlzn2dMiCZM1V0XTFL9y8PcrTohZgsuq_c-wDd1RzkHJl_3WppTA7GYSk7kgpx4RR3kQAGx3vOzPjE5d-5C7ZtYxxsr9QnULJ0m3dO3UsPIK5LR3GoSJSaRHv5UHjm28W0o_q_CEo1KId3ZxmKDNS59VcBsalU3PeoRGKivEC6jYX_GS2RdxC3sfhPq-5c7Pxdhsd5OYb8UWHzyOCABm15u10ipf9R3RudIsCag52JqNTMQZcKQFaLk5NT2JstmHUuJeaxD1_aUFqidSsCTq5PliyWvRoyLiSE2AC-ADku2H1_TXPeONH7M1ANYIn2u0c0vJ-FiDOjM6YzOpuY1cP9g07yfm0MpEDkPnMdHA-CyaTgQrhn9DEK4rD462r5mlqfEqYHemVggf5ZfgrWx2HIpcg-OgY4Kv81Xa8IveLROrs-3yhATme_CmN8QqIVdG6spNzIHuGPuv0ddy7sH9YyGbXpYQNlLb6XLzr1fzZb5xLac03xcF_Ao0AB8LPI=w139-h429-no?authuser=0")
   const [mustardImageUrl, setMustardImageUrl] = useState("https://lh3.googleusercontent.com/x696S2yNR4hpbeVUvgW1xIUyULr0jK8IIFlQwBB6ZZ_2l_FGsowMl2m-f3vqLSXQDBMlg_47zPsDEz_QWkpQtsG4EW4Ak7rmQXOnAyrz0ajSZ7GKG7IQ8tImetLAEeF0chnaJXT2-sbdIx6Kkw6G1Nb1sAypIgzn--hfSPWe5HeIlv03GtCU_hUZySHk2hNjHNSAh3QR13PWfa28bNxmz-LGj_WSjxQGAUd9Yi4ZzET7meTkwKFPl4jVb70_-BsEhJKuI1cJGiaK-NA-ZWksC-TEu_B0XfBJPixvbRRxRgM5E7m3kOM9-Ls5Gxn0R0Vp336OajENvH7nHr7CNuR8hjrmy4IaWB1lSRsXfgGR17iwYU4r1BXX-umBiMayKK9y1A0pmt8WBn2x9l94a2OlDwNQYvSIMPYxUJqR2jU8DCKdf4hFj2HwCOH_IVCZcRgiOJhxe00i2Ka6YyWSgUBezdTmNxSviYjrJVqZ5jGkEA49YOqJ-89CzzO5T3yjWM2i_p0FgfA5XjMURMShERz_hJyo-kT8mROLMWdp2SXxlXYWd_zrm9Gs9pyljImmnBJlTJQCO8jnyGGJEV0RV81YYsi7WvSY_g3Hu6FkElqbU0Gro0klTRRZeOod59cDsiTvnVi91_PbSC8ZNo1zxtche5ykKOQqbMDBJtt7kjUUhVvqYSLmOrfKqg6XyGnNgkbKogvuOnMZmXlq1UnHXB05sPY=w139-h425-no?authuser=0")
   const [onionImageUrl, setOnionImageUrl] = useState("https://lh3.googleusercontent.com/CbRvbhHWpbMdKEPBYZM1HHmvtE-RgLcuQSky8JuEywoCE0UO6r-tbhhocLZgM0SZb-XT-l2H13qEo1T3GX3LvVCJQ3uB6hVUjs3MjlPiob_W9UHLvFz1LRIKfAvceytFExXksf7CjtdL3Geze4aLMIka3F0XQyiVyc-qDVbRoKhGhLRvIKqePYgNUsk6yMNRc84USDs91D8xPoKKVNBx7oe_Kcy5QEcCcqXLRUcVtSidCj1OAWC5FbdvNeIQHJklcsB41CuScmNXkIDiTGZY8B8OhoMw4T0lflSr9wUfQXVXrcwpmQTN9JGu5UXmsQgtLBrmS07oI1rfHkkTKtcC47jjThTg2k943ledOpXhsAyIZyz7uGklWupJM6hoxUWPEnLSeYbncPNzCJt-x7Y5_SVKvN2zjVStueribz-s8ZWrOdBf-2JEINWpFhhaireCG1ZZyyWXbjS4hY_RAZj8YihLy672-PwF-nd4XYpittBhBTI4pr4SH-E4PUvR-5YERVx00yZNorlsL4TLz8TrSIZf5BzuwelQhlhR339XCh85ZrsBVjLVLP1vRG6vSpv1Ekwo9mGexn3UdRgc2Pd5Wa6frAXAR6LZuwecPlozAX6t3xdkr_kLT7amof6CIQqc6Br1owIVDbIPbE-VsXHVaJeI1QLWzsS0oGGiD8TKsy1XHg0QcJhfp9_SJ4NVFrQg-X8quZA0qMNBo-d6sQBK9ik=w580-h512-no?authuser=0")
+  const [relishImageUrl, setRelishImageUrl] = useState("https://lh3.googleusercontent.com/BEAYZU6jsW_enA-s4i94FohkPok9SLqAZth-aeq9TflrHwAiTHCccwT8ZWVohCDki7-AUhhQWHJDy7QARpnavEK2heh62ZcubxwygoH4jsJJE1dSG2Z66E-nUhqOOvW3EcT-KVUOENHCriHqq3Ks3qP34x81v3HaMlOYYfS2cnR3mFC96Nfr6O86xcFQhTRSvtRJVzpmeYdEqK5jrg2OhgNSm5rutyuDkyIvEMu-ve0bOsvT-6GLJjZX6CjydMvnDmwyGYGrexYRQyLFrmiEJhRlboMG5hfzBBzy9g3WteBpKhoDWwLQvzfqCjnonNqg8skBTJ2hur39_jXgeMVAJuYfTTkMihHpmcqNpr5SCQGSVrNgWQ2YpsiI22-BrYwHsNxeAlDhWHjyLH_NriK10KqVhMsZ1qAzaNb2oP1l0XePTV84F91al4CXDh90_T0ITFXJZgAqlU2waF0i0ef_JIXMZZJJE767SZpVXBgHk5YMFwD4VzNHQAEPEm9Qytxf0MdRDwSDs_f8g1oAjHdLW3i5iuIAx7IEu1eoY0nb3_lg5bmnxzNMEC4bkxGH_EgaQv1UpyGLLjqChba7MZ2IRtmghnFI4rd378lgN9HhQNUCCFzo83JQTu7lQxxFhVByDZkcgwKXDV392eQLlh7O7Mxrg-ARA95JHWxNTuEnwhUG1eL0EDzWftXZYOw5fz7AqCeTm4XaBG-lAjnJSlLxdOg=w297-h507-no?authuser=0")
 
 
   const ketchupClick = (e) => {
@@ -25,6 +27,12 @@ function Create({ currentUser }) {
     setOnionImageUrl("https://lh3.googleusercontent.com/bTq9u-QM-ZT4tn4VPOw_74v43OzIRcaPgxa28Hy1GGrOrb2LnrwbRZl674iUwzvjE2EusLJXM1PNT7A7DnAYdudQ1n_wKZlhTytjiR5EZWT0sRA2rS8wxbG4UPjTgniuNWpIJ_cC7HbxTUEyWGXuhnh9FbOKoekHkWeDYyr68fSdekfVF9w0_5TTu70YXr1edrUOgIpoEcAs2VVPUIZZyd2C5D_EYOEMDoOAIzxMW7-mZ4lQk5jBy6KfYss_eQi2qrr8GizwWDwxiv4485jvR88AwUrqM2j9QJisfFRPAHcAp5sN7dMvtezYFnz6PLaKhcEV8aSE-aJH4DYIbl9Ri9-JILg8K0ZESgz5sMxyB6Jq9e5VWOiTmtJi1_8JdAZ0SOIeN-HUxxtrsR00ULti6eQDoBa7pfXaS_Qj-EAzsV71YaAr2TesOsXK7kwpBuCMWlrE5KXOl-rkPxg7famz73Qfgd3SoZyho0Fk1RRyIbZh-lO0c3HLvYzPHs2CdpGf-b4pi4yqWA-OrvfKpxR8pPK4N9LMxBD1Vm3_NAR-d18gtunQAALS7vtqBpe3S2xVh6NY_HkeitAwG1LXOhJFQ2yx37Fu8ZXVVYu6jFnJoCAQjtjd0on2RcskeI5MpjZPefCienCJorMJKtOHABRnpdhYJ6Ln4cSdL8Y_k4QiQe-Rt1DDdrEkLppDv6n7pwKm1-jxHN11dtlcpXGdg2Xl1ZM=w903-h680-no?authuser=0")
   }
 
+  const relishClick = (e) => {
+    setRelish(e.target.name)
+    setRelishImageUrl("https://lh3.googleusercontent.com/aKyl5Z_Zb9ni-gyruQz9JHRmwWzXxnONX_vMYpEJjLYNHUp6d1uRIbxqxtrnEUNRxofCfZLqxiTHGo9MF27kcaWTXdu7Uxj3xvbL36B5uuG0LwlWrmWNnC6w-LkcROXo5U4crcq_xCp-eds0QP2YHWqzFkSZYFQ7tv6XJoAiOI8FcDNkByQh_8Z1WaJKHrEnvsTz8Sq67wwRJ6wvjlb9BQmpl0_1FPzaQH635cuEcpZalAg2aGkFN3qzeSidHOOMG5xDMFpCnvLViVkWvuFq93_FZrYtqnFzloMf13x2qD_J-fYyfeGhAlu5-Jum5AsiNZQgLrk5JVPvT0JkppETNLl4zqjZ4SRqd1ObDuXSYvVKT5-0Jvif3La_7rOkLMgEboBcdjsVtw1z4LzGW9t7tCo29vodpOFQB3htbAEL6zhb0jGCN84w-qeYcjI2f0zuTZlP45thA_vINukVD12XpxnMDXGivbxq7c7Eyc0YaF8GzEPnsP1PkpTfg24_R064k9_-PVUu7c3VGlY8g1fI_a1x93T2ztk-pYOK0gi0OAA7Ekxxq72QReUzmXJ-3tdCrX5Oy9xrGTW49W9Q2k3Eq86rNBmiN0D2oPJEYZ5QU5s1uGTKYguppObPTvILpsX1gHFOn4uZ2Ju5B_8x1fy-Q7YFTmFkXDQEbOg1FJ3URbUeXlyZf4Ggix3E7ctU15sb0YXfsgeQIXrOhwvkDRFMm4k=w297-h452-no?authuser=0")
+  }
+
+
   const handleHotDogSubmit = (e) => {
     e.preventDefault()
     fetch('/hot_dogs', {
@@ -33,7 +41,7 @@ function Create({ currentUser }) {
       body: JSON.stringify({
         name: e.target.name.value,
         dog_style: "All-Beef",
-        toppings: `${onion}`,
+        toppings: `${onion}, ${relish}`,
         condiments: `${ketchup}, ${mustard}`,
         restaurant_id: 8,
         user_id: currentUser.id
@@ -67,6 +75,13 @@ function Create({ currentUser }) {
         alt="onion" 
         name="Onion" 
         onClick={e => onionClick(e)} 
+      />
+      <img 
+        src={relishImageUrl} 
+        className="create-icon"
+        alt="relish" 
+        name="Relish" 
+        onClick={e => relishClick(e)} 
       />
 
       <form onSubmit={e => handleHotDogSubmit(e)}>

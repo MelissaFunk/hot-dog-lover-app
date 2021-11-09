@@ -23,14 +23,14 @@ function Profile({ currentUser }) {
   return(
     <div>
       <h1>My Profile</h1>
-      <form onSubmit={handleEdit}>
+      <form onSubmit={e =>handleEdit(e)}>
         <label>Name: {updatedUser.name} </label>
         <input type="text" name="name"/>
         <label>Username: {updatedUser.username} </label>
         <input type="text" name="username"/>
         <label>Password: </label>
         <input type="text" name="password"/>
-        <button>Update Name</button>
+        <button>Update Profile</button>
       </form>
     </div>
   )

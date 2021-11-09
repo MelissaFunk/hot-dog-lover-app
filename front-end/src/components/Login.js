@@ -14,7 +14,7 @@ function Login({ setCurrentUser }) {
     e.preventDefault()
     setErrors([])
     const user = { name: nameSign, username: userSign, password: passSign}
-
+  
     fetch('/users', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

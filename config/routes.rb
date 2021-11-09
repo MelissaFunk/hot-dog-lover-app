@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :hot_dogs, only: [:show, :create] #create
+  resources :hot_dogs, only: [:create] #create
   resources :comments, only: [:create]
   resources :reviews, only: [:create]
   resources :users, only: [:index, :create, :update] #update
