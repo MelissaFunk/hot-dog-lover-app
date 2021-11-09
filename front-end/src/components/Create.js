@@ -65,6 +65,10 @@ function Create({ currentUser }) {
     e.target.reset()
   }
 
+  const refreshClick = () => {
+    window.location.reload()
+  }
+
   return(
     <div>
       <h1>Create Your Own Hot Dog!</h1>
@@ -86,6 +90,7 @@ function Create({ currentUser }) {
         <h3>Name: {hotDog.name}</h3> 
         <p>Toppings: {hotDog.toppings}</p>
         <p>Condiments: {hotDog.condiments}</p>
+        <button onClick={refreshClick}>Refresh Page</button>
       </div>
       : null}
 
@@ -93,6 +98,10 @@ function Create({ currentUser }) {
           <img src="https://i.imgur.com/dGeZ09N.png" alt="plain-hot-dog" className="plain-hot-dog" />
           {mustard ? <img src="https://i.imgur.com/5P5UO0l.png" alt="mustard_squiggle" className="mustard_sqiggle"/> : null }
           {ketchup ? <img src="https://i.imgur.com/95ceEa4.png" alt="ketchup-squiggle" className="ketchup_sqiggle"/> : null }
+          {onion ? <img src="https://i.imgur.com/qPKxpz1.png" alt="chopped-onions" className="chopped-onions"/> : null }
+          {pepper ? <img src="https://i.imgur.com/hjsYuRK.png" alt="sliced-peppers" className="sliced-peppers"/> : null }
+          {relish ? <img src="https://i.imgur.com/9DQaH7E.png" alt="relish" className="relish"/> : null }
+          {sauerkraut ? <img src="https://i.imgur.com/khLkkD3.png" alt="sauerkraut" className="sauerkraut"/> : null }
         </div>
     </div>
   )

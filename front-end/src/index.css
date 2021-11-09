@@ -19,13 +19,72 @@ body {
   padding-bottom: 20px
 }
 
+.created-dog {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding-top: 50px
+}
+
 .plain-hot-dog {
-  width: 600px;
-  height: auto
+  width: 700px;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
 }
 
 .mustard_sqiggle {
-  width: 550px;
-  height: auto
+  width: 650px;
+  height: 100px;
+  transform: rotate(25deg);
+  position: absolute;
+  top: 180px;
+  left: 85px;
+}
+
+.ketchup_sqiggle {
+  width: 650px;
+  height: 100px;
+  transform: rotate(26deg);
+  position: absolute;
+  top: 270px;
+  left: 10px;
+}
+
+.chopped-onions {
+  width: 600px;
+  height: 60px;
+  transform: rotate(29deg);
+  position: absolute;
+  top: 210px;
+  left: 90px;
+}
+
+.sliced-peppers {
+  width: 600px;
+  height: 100px;
+  transform: rotate(22deg);
+  position: absolute;
+  top: 210px;
+  left: 70px;
+}
+
+.relish {
+  width: 600px;
+  height: auto;
+  transform: rotate(30deg);
+  position: absolute;
+  top: 250px;
+  left: 70px;
+}
+
+.sauerkraut {
+  width: 600px;
+  height: 50px;
+  transform: rotate(24deg);
+  position: absolute;
+  top: 240px;
+  left: 70px;
 }
 
