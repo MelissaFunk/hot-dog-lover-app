@@ -12,7 +12,6 @@ function Login({ setCurrentUser }) {
 
   function onSignupSubmit(e) {
     e.preventDefault()
-    setErrors([])
     const user = { name: nameSign, username: userSign, password: passSign}
   
     fetch('/users', {
@@ -27,14 +26,13 @@ function Login({ setCurrentUser }) {
           history.push('/find')
         })
       } else {
-        res.json().then(errors => setErrors(errors))
+        res.json().then(errorData => setErrors(errorData.errors))
       } 
     })
   }
 
   function onLoginSubmit(e) {
     e.preventDefault()
-    setErrors([])
     const user = { username: userLog, password: passLog}
 
     fetch('/login', {
@@ -49,7 +47,7 @@ function Login({ setCurrentUser }) {
           history.push('/find')
         })
       } else {
-        res.json().then(errors => setErrors(errors))
+        res.json().then(errorData => setErrors(errorData.errors))
       } 
     })
   }
@@ -79,7 +77,7 @@ function Login({ setCurrentUser }) {
         <input type="password" value={passLog} onChange={e => setPassLog(e.target.value)}></input>
         <button type="submit">Login</button>
       </form>
-      {errors}
+      {errors ? errors : null}
     </div>
   )
 }

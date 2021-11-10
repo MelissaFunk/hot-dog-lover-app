@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   end
     
   def update
-    current_user.update(params.require(:user).permit(:name, :username, :password))
+    current_user.update(params.require(:user).permit(:id, :name, :username, :password))
     render json: current_user, status: :accepted
   end
 
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   end
 
   def render_unprocessable_response(invalid)
-    render json: { errors: current_user.errors.full_messages }, status: :unprocessable_entity
+    render json: { errors: "Username and/or Password Cannot Be Blank" }, status: :unprocessable_entity
   end
 
   def user_not_found_response

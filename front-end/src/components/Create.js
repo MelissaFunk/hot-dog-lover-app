@@ -15,7 +15,6 @@ function Create({ currentUser }) {
   const [relishImageUrl, setRelishImageUrl] = useState("https://i.imgur.com/Gc3asHw.png")
   const [sauerkrautImageUrl, setSauerkrautImageUrl] = useState("https://i.imgur.com/dh7fEfb.png")
 
-
   const ketchupClick = (e) => {
     setKetchup(e.target.name)
     setKetchupImageUrl("https://i.imgur.com/kSKGj9y.png")

@@ -19,7 +19,7 @@ function Profile({ currentUser }) {
     .then(setUpdatedUser)
     e.target.reset()
   }
-
+  
   return(
     <div>
       <h1>My Profile</h1>
@@ -29,7 +29,7 @@ function Profile({ currentUser }) {
         <label>Username: {updatedUser.username} </label>
         <input type="text" name="username"/>
         <label>Password: </label>
-        <input type="text" name="password"/>
+        <input type="password" name="password"/>
         <button>Update Profile</button>
       </form>
     </div>

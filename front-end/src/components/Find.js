@@ -5,7 +5,6 @@ function Find() {
   const [restaurants, setRestaurants] = useState([])
   const [filterByCondTop, setFilterByCondTop] = useState("")
   const [filterByRating, setFilterByRating] = useState("All")
-  // create one Filter State
 
   useEffect(() => {
     fetch('/restaurants')
