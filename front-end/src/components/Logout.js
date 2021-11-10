@@ -16,9 +16,11 @@ function Logout({ setCurrentUser }) {
 }
 
   return(
-    <div>
-      <h1>Logout</h1>
-      <button onClick={handleLogout}>Logout</button>
+    <div className="popup">
+      <div className="popup_inner">
+        <h1>Are you sure you want to logout?</h1>
+        <button onClick={handleLogout}>Logout</button>
+      </div>
     </div>
   )
 }

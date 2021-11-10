@@ -14,10 +14,3 @@ function NavBar() {
 }
 
 export default NavBar
-
-// <Route exact path="/find"><Find /></Route>
-// <Route exact path="/restaurant/:id"><RestaurantDetails /></Route>
-// <Route exact path="/create"><Create /></Route>
-// <Route exact path="/favorites/:id"><Favorites /></Route>
-// <Route exact path="/profile"><Profile /></Route>
-// <Route exact path="/logout"><Logout /></Route>
