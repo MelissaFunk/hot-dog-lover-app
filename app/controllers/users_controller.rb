@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   end
     
   def update
-    current_user.update(params.require(:user).permit(:id, :name, :username, :password))
+    current_user.update(user_params)
     render json: current_user, status: :accepted
   end
 
