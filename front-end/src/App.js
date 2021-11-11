@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div>
-        {currentUser.name ? <NavBar /> : null}
+        {currentUser.name ? <NavBar setCurrentUser={setCurrentUser}/> : null}
         <Switch>
           <Route exact path="/"><Login setCurrentUser={setCurrentUser}/></Route>
           <Route exact path="/find"><Find /></Route>

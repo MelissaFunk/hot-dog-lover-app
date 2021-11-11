@@ -1,28 +1,15 @@
-import { useHistory } from "react-router-dom"
 
-function Logout({ setCurrentUser }) {
-   const history = useHistory()
+function Logout({ trigger, setTrigger, handleLogout }) {
 
-  function handleLogout() {
-    fetch("/logout", {
-        method: "DELETE"
-    })
-    .then(resp => {
-        if (resp.ok) {
-            setCurrentUser({})
-            history.push("/")
-        }
-    })
-}
-
-  return(
+  return (trigger ? (
     <div className="popup">
-      <div className="popup_inner">
+      <div className="popup-inner">
+        <button className="close-btn" onClick={() => setTrigger(false)}>X</button>
         <h1>Are you sure you want to logout?</h1>
         <button onClick={handleLogout}>Logout</button>
       </div>
     </div>
-  )
+  ): null )
 }
 
 export default Logout

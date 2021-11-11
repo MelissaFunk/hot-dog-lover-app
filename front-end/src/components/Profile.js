@@ -6,7 +6,6 @@ function Profile({ currentUser }) {
 
   function handleEdit(e) {
     e.preventDefault()
-
     fetch(`/users/${currentUser.id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
