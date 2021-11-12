@@ -5,7 +5,7 @@ import { GoogleMap, useLoadScript, Marker, InfoWindow } from "@react-google-maps
 
 const libraries = ["places"]
 
-const Find =() => {
+const Find = () => {
   const [restaurants, setRestaurants] = useState([])
   const [filterByCondTop, setFilterByCondTop] = useState("")
   const [filterByRating, setFilterByRating] = useState("All")
@@ -79,8 +79,8 @@ const Find =() => {
   if (!isLoaded) return "Loading Maps"
 
   const mapContainerStyle = {
-    width: '100vw',
-    height: '100vh'
+    width: '80vw',
+    height: '80vh'
   }
 
   const center = {
@@ -90,8 +90,10 @@ const Find =() => {
 
   return(
     <div>
-      <h1>Find</h1>
-      <button onClick={mapClick}>{!clicked ? "Map View": "List View"}</button>
+      <div className="find-header">
+        <h1 className="find-h1">Find a Restaurant</h1> 
+        <button className="find-btn" onClick={mapClick}>{!clicked ? "Map View": "List View"}</button>
+      </div>
       {!clicked ? 
       <div>
         <p>Use the search bar below to filter through hot dog restaurants</p>

@@ -20,16 +20,14 @@ function NavBar({ setCurrentUser }) {
 }
   
   return (
-    <div>
-      <main>
-        <Link to="/find"><button>Find</button></Link>
-        <Link to="/create"><button>Create</button></Link>
-        <Link to="/favorites"><button>Favorites</button></Link>
-        <Link to="/profile"><button>Profile</button></Link>
-        <button onClick={() => setButtonPopup(true)}>Logout</button>
-      </main>
-
-      <Logout trigger={buttonPopup} setTrigger={setButtonPopup} handleLogout={handleLogout}></Logout>
+    <div className="navbar">
+      <img src="https://i.imgur.com/5JFGSbX.jpg" alt="pic" className="logo-img"/>
+        <Link to="/find"><button className="navbar-btn">Find</button></Link>
+        <Link to="/create"><button className="navbar-btn">Create</button></Link>
+        <Link to="/favorites"><button className="navbar-btn">Favorites</button></Link>
+        <Link to="/profile"><button className="navbar-btn">Profile</button></Link>
+        <button className="navbar-btn-logout" onClick={() => setButtonPopup(true)}>Logout</button>
+        <Logout trigger={buttonPopup} setTrigger={setButtonPopup} handleLogout={handleLogout}></Logout>
     </div>
   )
 }
