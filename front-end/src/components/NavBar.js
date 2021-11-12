@@ -26,7 +26,6 @@ function NavBar({ setCurrentUser }) {
         <Link to="/create"><button>Create</button></Link>
         <Link to="/favorites"><button>Favorites</button></Link>
         <Link to="/profile"><button>Profile</button></Link>
-        {/* <Link to="/logout"><button>Logout</button></Link> */}
         <button onClick={() => setButtonPopup(true)}>Logout</button>
       </main>
 

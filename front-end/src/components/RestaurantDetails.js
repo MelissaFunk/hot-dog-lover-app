@@ -98,8 +98,8 @@ function RestaurantDetails({ currentUser }) {
   return (
     <div>
       <h1>{restaurant.name} {"★".repeat(restaurant.avg_rating) + "☆".repeat(5 - restaurant.avg_rating)}</h1>
-      <img src={restaurant.image} alt="restaurant"/>
       <p>{restaurant.address}</p>
+      <img src={restaurant.image} alt="restaurant"/>
       {eachHotDog()}
       <button onClick={handleFavorite}>{favClicked ? "Added!" : "Add to Favorites"}</button>
       <p>Comments: {commentsArr.map(com => {

@@ -1,5 +1,5 @@
 class RestaurantSerializer < ActiveModel::Serializer
-  attributes :id, :name, :image, :description, :avg_rating, :all_condiments_toppings
+  attributes :id, :name, :image, :description, :avg_rating, :all_condiments_toppings, :lat, :lon
   has_many :hot_dogs
 
   def avg_rating
