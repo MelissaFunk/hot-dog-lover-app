@@ -91,7 +91,9 @@ function Login({ setCurrentUser }) {
             <button className="form-input-btn" type="submit">Signup</button>
           </form>
         </div>
-        <p className="error-message">{errors ? errors : null}</p>
+        <div className="error-message">{errors ? errors.map(error => (
+          <p key={error}>{error}</p>
+        )) : null}</div>
       </div>
     </div>
     </div>

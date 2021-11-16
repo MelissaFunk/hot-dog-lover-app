@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   end
 
   def render_unprocessable_response(invalid)
-    render json: { errors: "Username and/or Password Cannot Be Blank" }, status: :unprocessable_entity
+    render json: { errors: invalid.record.errors.full_messages }, status: :unprocessable_entity
   end
 
   def user_not_found_response

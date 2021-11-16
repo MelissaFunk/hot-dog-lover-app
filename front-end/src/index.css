@@ -51,7 +51,7 @@ body {
   border-radius: 10px;
   height: 480px;
   display: grid;
-  grid-template-rows: 1fr 1.2fr;
+  grid-template-rows: 1fr 1.3fr;
   background: rgb(240, 214, 147);
 }
 
@@ -112,7 +112,7 @@ body {
   border: none;
   color: #F9e5cc;
   font-size: 1rem;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .form-input-btn:hover {
