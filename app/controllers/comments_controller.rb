@@ -1,4 +1,8 @@
 class CommentsController < ApplicationController
+
+  def index
+    render json: Comment.all, include: :user, status: :ok
+  end
   
   def create
     comment = Comment.create(comment_params)

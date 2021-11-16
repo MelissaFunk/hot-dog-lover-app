@@ -21,8 +21,8 @@ function Favorites({ currentUser }) {
     )}
 
   return(
-    <div>
-      <h1>My Favorite Restaurants</h1>
+    <div className="rest-container">
+      <h1>My Favorites</h1>
       {eachRestaurant()}
     </div>
   )

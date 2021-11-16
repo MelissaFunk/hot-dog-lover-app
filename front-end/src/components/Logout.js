@@ -6,7 +6,7 @@ function Logout({ trigger, setTrigger, handleLogout }) {
       <div className="popup-inner">
         <button className="close-btn" onClick={() => setTrigger(false)}>X</button>
         <h1>Are you sure you want to logout?</h1>
-        <button onClick={handleLogout}>Logout</button>
+        <button className="create-btn" onClick={handleLogout}>Logout</button>
       </div>
     </div>
   ): null )

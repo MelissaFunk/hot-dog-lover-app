@@ -69,8 +69,8 @@ function Create({ currentUser }) {
   }
 
   return(
-    <div>
-      <h1>Create Your Own Hot Dog!</h1>
+    <div className="create-container">
+      <h1>Create Your Own Hot Dog</h1>
       <img src={ketchupImageUrl} className="create-icon" alt="ketchup" name="Ketchup" onClick={e => ketchupClick(e)} />
       <img src={mustardImageUrl} className="create-icon" alt="mustard" name="Mustard" onClick={e => mustardClick(e)} />
       <img src={onionImageUrl} className="create-icon-onion" alt="onion" name="Onion" onClick={e => onionClick(e)} />
@@ -79,9 +79,9 @@ function Create({ currentUser }) {
       <img src={sauerkrautImageUrl} className="create-icon" alt="sauerkraut" name="Sauerkraut" onClick={e => sauerkrautClick(e)} />
 
       <form onSubmit={e => handleHotDogSubmit(e)}>
-        <label>Name: </label>
-        <input type="text" name="name" />
-        <button>Add Hot Dog</button>
+        <label className="create-label">Name: </label>
+        <input className="create-input" type="text" name="name" />
+        <button className="create-btn">Add Hot Dog</button>
       </form>
 
       {hotDog ? 
@@ -89,7 +89,7 @@ function Create({ currentUser }) {
         <h3>Name: {hotDog.name}</h3> 
         <p>Toppings: {hotDog.toppings}</p>
         <p>Condiments: {hotDog.condiments}</p>
-        <button onClick={refreshClick}>Refresh Page</button>
+        <button className="create-btn" onClick={refreshClick}>Refresh Page</button>
       </div>
       : null}
 

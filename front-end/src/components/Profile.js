@@ -35,24 +35,30 @@ function Profile({ currentUser }) {
   }
   
   return(
-    <div>
+    <div className="profile-container">
       <h1>My Profile</h1>
       {clicked ?
+      <div>
       <form onSubmit={e => handleEdit(e)}>
-        <label>Name: </label>
-        <input type="text" name="name" value={updatedUser.name} onChange={changeInput}/>
-        <label>Username: </label>
-        <input type="text" name="username" value={updatedUser.username} onChange={changeInput}/>
-        <label>Password: </label>
-        <input type="password" name="password" value={updatedUser.password} onChange={changeInput}/>
-        <button>Save</button>
-      </form>
+        <label><b>Name: </b></label>
+        <input className="profile-inputs" type="text" name="name" value={updatedUser.name} onChange={changeInput}/>
+        <br />< br/>
+        <label><b>Username: </b></label>
+        <input className="profile-inputs" type="text" name="username" value={updatedUser.username} onChange={changeInput}/>
+        <br />< br/>
+        <label><b>Password: </b></label>
+        <input className="profile-inputs" type="password" name="password" value={updatedUser.password} onChange={changeInput}/>
+        <br />< br/>
+        <button className="comment-btn">Save</button>
+      </form> <br />
+      <button className="comment-btn" onClick={onClick}>Cancel</button>
+      </div>
       : 
       <div>
-        <button onClick={onClick}>Edit Profile</button>
-        <label>Name: {updatedUser.name}</label>
-        <label>Username: {updatedUser.username}</label>
-        <label>Password: ******</label>
+        <label><b>Name: </b>{updatedUser.name}  </label><br />< br/>
+        <label><b>Username: </b>{updatedUser.username}  </label><br />< br/>
+        <label><b>Password: </b>******</label><br />< br/>
+        <button className="comment-btn" onClick={onClick}>Edit Profile</button>
       </div>
       }
     </div>

@@ -9,7 +9,6 @@ function RestaurantDetails({ currentUser }) {
   const [favorites, setFavorites] = useState([])
   const [ratings, setRatings] = useState([])
   const [favClicked, setFavClicked] = useState(false)
-  const [commentClicked, setCommentClicked] = useState(false)
   const { id } = useParams()
 
   useEffect(() => {
@@ -38,10 +37,7 @@ function RestaurantDetails({ currentUser }) {
       })
     })
     .then(res => res.json())
-    .then(data => {
-      handleAddComment(data)
-      setCommentClicked(commentClicked => !commentClicked)
-    })
+    .then(handleAddComment)
     e.target.reset()
   }
 
@@ -95,29 +91,48 @@ function RestaurantDetails({ currentUser }) {
       )
   }
 
+
   return (
     <div>
-      <h1>{restaurant.name} {"★".repeat(restaurant.avg_rating) + "☆".repeat(5 - restaurant.avg_rating)}</h1>
-      <p>{restaurant.address}</p>
-      <img src={restaurant.image} alt="restaurant"/>
-      {eachHotDog()}
-      <button onClick={handleFavorite}>{favClicked ? "Added!" : "Add to Favorites"}</button>
-      <p>Comments: {commentsArr.map(com => {
-        return <li key={com.id}>{com.comment}</li>})}
-      </p>
-      <form onSubmit={handleCommentSubmit}>
-        <label>Add a Comment: </label>
-        <input type="text" name="comment"/>
-        <button>{commentClicked ? "Added!" : "Add Comment"}</button>
+    <div className="rest-details">
+      <div className="rest-details-left">
+        <h1 className="rest-details-header">{restaurant.name} {"★".repeat(Math.round(parseFloat(restaurant.avg_rating))) + "☆".repeat(5 - Math.round(parseFloat(restaurant.avg_rating)))}</h1>
+        <p className="rest-details-header">{restaurant.address}</p>
+        <img className="rest-details-img" src={restaurant.image} alt="restaurant"/>
+
+        <div className="rest-details-btns">
+          <button className="rest-details-btn" onClick={() => window.open(restaurant.url, '_blank')}>Order Online</button>
+          <br /><br />
+          <button className="rest-details-btn" onClick={handleFavorite}>{favClicked ? "Added!" : "Add to Favorites"}</button>
+        </div>
+
+      <div className="details-rating-bar">
+        <label className="details-rating-label">Rate Restaurant: </label>
+        <select className="details-rating-select" onChange={handleRating}>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+     <form className="comment-form" onSubmit={handleCommentSubmit}>
+        <input className="comment-input" type="text" name="comment"/>
+        <button className="comment-btn">Add Comment</button>
       </form>
-      <label>Rate Restaurant: </label>
-      <select onChange={handleRating}>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
+      <div className="comments">
+        <p><b>Comments: </b></p>
+        {commentsArr.map(com => {
+          return <p key={com.id}>{com.comment}</p>})}
+      </div>
+      </div>
+
+      <div className="rest-details-right">
+        <h2 className="rest-details-header">Menu Highlights:</h2>
+        {eachHotDog()}
+      </div>
+      </div>
     </div>
   )
 }

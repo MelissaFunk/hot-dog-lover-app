@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :hot_dogs, only: [:create] #create
-  resources :comments, only: [:create]
+  resources :hot_dogs, only: [:create]
+  resources :comments, only: [:index, :create]
   resources :reviews, only: [:create]
-  resources :users, only: [:index, :create, :update] #update
+  resources :users, only: [:index, :create, :update]
   resources :restaurants, only: [:index, :show]
 
   post '/login', to: 'sessions#create'

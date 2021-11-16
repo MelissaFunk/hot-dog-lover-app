@@ -91,24 +91,27 @@ const Find = () => {
   return(
     <div>
       <div className="find-header">
-        <h1 className="find-h1">Find a Restaurant</h1> 
+        <h1 className="find-h1">Find a Hot Dog</h1> 
         <button className="find-btn" onClick={mapClick}>{!clicked ? "Map View": "List View"}</button>
       </div>
       {!clicked ? 
       <div>
-        <p>Use the search bar below to filter through hot dog restaurants</p>
-        <label>Search by Condiments or Toppings: </label>
-        <input type="text" onChange={handleCondTopFilterChange} />
-        <label>Search by Rating : </label>
-        <select onChange={handleRatingFilterChange}>
-          <option value="All">All</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select> 
-        {filterByRating === "All" ? eachRestaurantByCondTop() : eachRestaurantByRating()}
+        <div className="search-bar">
+          <label className="search-label">Search by Condiments or Toppings: </label>
+          <input className="search-input" type="text" onChange={handleCondTopFilterChange} />
+          <label className="rating-label">Search by Rating: </label>
+          <select className="rating-select" onChange={handleRatingFilterChange}>
+            <option value="All">All</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select> 
+        </div>
+        <div className="rest-container">
+          {filterByRating === "All" ? eachRestaurantByCondTop() : eachRestaurantByRating()}
+        </div>
       </div>
     : <div>
         <GoogleMap mapContainerStyle={mapContainerStyle} zoom={13} center={center}>
@@ -128,8 +131,8 @@ const Find = () => {
              <div>
                <h2>{selectedRest.name}</h2>
                <h4>{selectedRest.description}</h4>
-               <p>Rating: {selectedRest.avg_rating} Stars</p>
-               <Link to={`/restaurant/${selectedRest.id}`}><button>See Details</button></ Link>
+               <p>Rating: {"★".repeat(Math.round(parseFloat(selectedRest.avg_rating))) + "☆".repeat(5 - Math.round(parseFloat(selectedRest.avg_rating)))}</p>
+               <Link to={`/restaurant/${selectedRest.id}`}><button className="map-details-btn">See Details</button></ Link>
              </div>
            </InfoWindow>
           )}
