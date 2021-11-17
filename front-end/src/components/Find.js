@@ -71,7 +71,7 @@ const Find = () => {
   }
 
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+    googleMapsApiKey: "AIzaSyCPoZGaukhIBRKPs27oGwShRpWQWC12TCI",
     libraries,
   })
 
