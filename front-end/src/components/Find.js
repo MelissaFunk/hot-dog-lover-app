@@ -132,7 +132,7 @@ const Find = () => {
                <h2>{selectedRest.name}</h2>
                <h4>{selectedRest.description}</h4>
                <p>Rating: {"★".repeat(Math.round(parseFloat(selectedRest.avg_rating))) + "☆".repeat(5 - Math.round(parseFloat(selectedRest.avg_rating)))}</p>
-               <Link to={`/restaurant/${selectedRest.id}`}><button className="map-details-btn">See Details</button></ Link>
+               <Link to={`/details/${selectedRest.id}`}><button className="map-details-btn">See Details</button></ Link>
              </div>
            </InfoWindow>
           )}
