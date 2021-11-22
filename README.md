@@ -7,5 +7,7 @@ System dependencies:
 - Rails version: 6.1.4
 
 To start:
-1. Run rails s to start the back-end server
-2. Run npm start to start the front-end server (from the front-end folder)
+1. Run bundle install to install dependencies on the back-end server
+2. Run rails s to start the back-end server
+3. Run npm install to install depenendencies on the front-end server
+4. Run npm start to start the front-end server (from the front-end folder)
