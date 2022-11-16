@@ -87,7 +87,7 @@ const Find = () => {
     lat: 37.761848,
     lng: -122.445312,
   }
-
+  
   return(
     <div>
       <div className="find-header">

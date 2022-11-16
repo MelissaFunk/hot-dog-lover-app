@@ -59,7 +59,7 @@ function Login({ setCurrentUser }) {
   const imageHoverExit = (e) => {
     e.target.src="https://i.imgur.com/oAFz2Qm.png"
   }
-
+ 
   return (
     <div>
       <img className="welcome-header" src="https://i.imgur.com/I4Xf9E8.jpg" alt="welcome-header"/>
@@ -72,7 +72,7 @@ function Login({ setCurrentUser }) {
         <div className="login-form-content-top">
           <form className="login-form" onSubmit={onLoginSubmit}>
             <input className="form-inputs" placeholder=" Username" type="text" value={userLog} onChange={e => setUserLog(e.target.value)}></input>
-            <input className="form-inputs" placeholder=" Password"type="password" value={passLog} onChange={e => setPassLog(e.target.value)}></input>
+            <input className="form-inputs" placeholder=" Password" type="password" value={passLog} onChange={e => setPassLog(e.target.value)}></input>
             <button className="form-input-btn" type="submit">Login</button>
           </form>
         </div>

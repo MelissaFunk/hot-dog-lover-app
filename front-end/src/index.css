@@ -3,7 +3,7 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   background-color: #fdedd8
-}
+}  
 
 /* LOGIN */
 
@@ -15,7 +15,7 @@ body {
   margin-right: auto;
   width: 50%
 }
-
+ 
 .welcome {
   margin: 10px auto;
   width: 500px;
@@ -125,7 +125,7 @@ body {
   text-align: center;
   color: gray
 }
-
+  
 /* NAVBAR */
 
 .navbar {
@@ -163,7 +163,7 @@ body {
   border-style: solid;
   border-color: black;
   border-radius: 7px;
-}
+}  
 
 .navbar-btn:hover {
   background: yellow

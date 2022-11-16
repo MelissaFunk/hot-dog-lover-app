@@ -33,7 +33,7 @@ function App() {
           <Route exact path="/my-favorites"><Favorites currentUser={currentUser} /></Route>
           <Route exact path="/my-profile"><Profile currentUser={currentUser} /></Route>
           <Route exact path="/logout"><Logout setCurrentUser={setCurrentUser}/></Route>
-        </Switch>
+        </Switch> 
     </div>
   );
 }

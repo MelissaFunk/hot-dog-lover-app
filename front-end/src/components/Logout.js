@@ -10,6 +10,6 @@ function Logout({ trigger, setTrigger, handleLogout }) {
       </div>
     </div>
   ): null )
-}
-
+} 
+ 
 export default Logout

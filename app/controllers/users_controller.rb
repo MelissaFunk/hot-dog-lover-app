@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_response
-  rescue_from ActiveRecord::RecordNotFound, with: :user_not_found_response
+  rescue_from ActiveRecord::RecordNotFound, with: :user_not_found_response 
 
   def index
     render json: User.all, status: :ok
@@ -24,9 +24,9 @@ class UsersController < ApplicationController
     current_user.update(user_params)
     render json: current_user, status: :accepted
   end
-
+ 
   def favorites
-    favorite = Review.where(["user_id = ? and favorite = ?", params[:id], true])
+    favorite = Review.where(["user_id = ? and favorite = ?", params[:id], true]).uniq{ |rest| [rest.restaurant.name] }
     render json: favorite, status: :ok
   end
 

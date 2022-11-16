@@ -17,8 +17,8 @@ function NavBar({ setCurrentUser }) {
             history.push("/")
         }
     })
-}
-  
+}  
+    
   return (
     <div className="navbar">
       <img src="https://i.imgur.com/5JFGSbX.jpg" alt="pic" className="logo-img"/>
