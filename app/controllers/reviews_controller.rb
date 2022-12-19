@@ -1,4 +1,8 @@
 class ReviewsController < ApplicationController
+
+  def index
+    render json: Review.all, status: :ok
+  end
   
   def create
     review = Review.create(review_params)

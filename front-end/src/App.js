@@ -26,7 +26,7 @@ function App() {
     <div>
         {currentUser.name ? <NavBar setCurrentUser={setCurrentUser}/> : null}
         <Switch>
-          <Route exact path="/"><Login setCurrentUser={setCurrentUser}/></Route>
+          <Route exact path="/">{currentUser.name ? <Find /> : <Login setCurrentUser={setCurrentUser}/>}</Route>
           <Route exact path="/find"><Find /></Route>
           <Route exact path="/details/:id"><RestaurantDetails currentUser={currentUser}/></Route>
           <Route exact path="/create"><Create currentUser={currentUser}/></Route>

@@ -1,4 +1,4 @@
 class ReviewSerializer < ActiveModel::Serializer
- belongs_to :restaurant
-
+  attributes :rating, :favorite, :user_id, :restaurant_id
+  belongs_to :restaurant
 end
